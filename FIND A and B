@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class Codechef {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int testCases = scanner.nextInt();
+
+        for (int t = 0; t < testCases; t++) {
+            int x = scanner.nextInt();
+            int y = scanner.nextInt();
+            int z = scanner.nextInt();
+
+            int result = calculateResult(x, y, z);
+            System.out.println(result);
+        }
+    }
+
+    private static int calculateResult(int x, int y, int z) {
+        if ((x * y) % z == 0) {
+            return x * y;
+        } else if ((x * z) % y == 0) {
+            return x * z;
+        } else if ((y * z) % x == 0) {
+            return y * z;
+        } else {
+            return -1;
+        }
+    }
+}
